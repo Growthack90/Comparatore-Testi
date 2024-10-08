@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+textarea {
+    width: 400px;
+    height: 200px;
+}
+
+#risultato {
+    margin-top: 20px;
+    white-space: pre-wrap;
+    /* Per mantenere i newline */
+}
+
+.diff {
+    background-color: yellow;
+}

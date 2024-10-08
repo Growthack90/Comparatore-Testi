@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Confronto Testi</title>
+<style>
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+  margin: 0;
+}
+
+h1 {
+  color: #333;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 400px;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: vertical;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #0069d9;
+}
+
+#risultato {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: pre-wrap;
+  font-size: 16px;
+  width: 80%;
+  max-width: 800px;
+}
+
+.diff {
+  background-color: #fff3cd; /* Giallo chiaro */
+  padding: 0.2em;
+  border-radius: 3px;
+}
+</style>
+</head>
+<body>
+  <h1>Confronto Testi</h1>
+  <div class="container">
+    <div>
+      <label for="testo1">Testo 1:</label>
+      <textarea id="testo1"></textarea>
+    </div>
+    <div>
+      <label for="testo2">Testo 2:</label>
+      <textarea id="testo2"></textarea>
+    </div>
+  </div>
+  <button id="confronta">Confronta</button>
+  <div id="risultato"></div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const testo1 = document.getElementById('testo1');
+    const testo2 = document.getElementById('testo2');
+    const risultato = document.getElementById('risultato');
+    const confrontaBtn = document.getElementById('confronta');
+
+    confrontaBtn.addEventListener('click', () => {
+      const text1 = testo1.value;
+      const text2 = testo2.value;
+      const diff = diffTexts(text1, text2);
+      risultato.innerHTML = diff;
+    });
+
+    function diffTexts(text1, text2) {
+      const lines1 = text1.split('\n');
+      const lines2 = text2.split('\n');
+      let result = '';
+
+      for (let i = 0; i < Math.max(lines1.length, lines2.length); i++) {
+        const line1 = lines1[i] || '';
+        const line2 = lines2[i] || '';
+
+        if (line1 !== line2) {
+          result += `<span class="diff">${line1}</span>\n`;
+        } else {
+          result += `${line1}\n`;
+        }
+      }
+
+      return result;
+    }
+  });
+  </script>
+</body>
+</html>
