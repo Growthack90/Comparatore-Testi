@@ -50,24 +50,8 @@ Preparazione:
 
 **Risultato:**
 Nell'area "Risultato" vedrai il Testo 1 con le differenze evidenziate in giallo.
-```
-Ingredienti:
-- <span class="diff">400g</span> di pasta
-- 50g di basilico fresco
-- <span class="diff">2 spicchi</span> d'aglio
-- 50g di parmigiano reggiano
-- 30g di pinoli
-- <span class="diff">100ml</span> di olio extravergine di oliva
-- Sale q.b.
 
-Preparazione:
-1. Lavare e asciugare il basilico.
-2. <span class="diff">Pestare</span> l'aglio con un pizzico di sale.
-3. Aggiungere il basilico e <span class="diff">pestare</span> fino a ottenere una crema.
-4. Unire il parmigiano e i pinoli, continuare a <span class="diff">pestare</span>.
-5. Diluire il pesto con l'olio a filo.
-6. Lessare la pasta in abbondante acqua salata.
-7. Scolare la pasta e condirla con il pesto.
-```
+![Risultato](risultato.PNG)
+
 
 
